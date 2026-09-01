@@ -1,0 +1,51 @@
+:root {
+--color-turquoise-surf-50: #eaf7fb;
+--color-turquoise-surf-100: #d4f0f7;
+--color-turquoise-surf-200: #a9e1ef;
+--color-turquoise-surf-300: #7ed2e7;
+--color-turquoise-surf-400: #54c3de;
+--color-turquoise-surf-500: #29b4d6;
+--color-turquoise-surf-600: #2190ab;
+--color-turquoise-surf-700: #186c81;
+--color-turquoise-surf-800: #104856;
+--color-turquoise-surf-900: #08242b;
+--color-turquoise-surf-950: #06191e;
+
+}
+
+.tabExample {
+    transition: all 0.2s ease-in-out;
+    outline: 1px solid #080808;
+}
+
+.tabExample:hover {
+    outline: 1px solid var(--color-turquoise-surf-500);
+}
+
+.searchForm {
+    border: none;
+    border-radius: 6px;
+    background-color: #0a0a0a;
+
+    color: var(--color-turquoise-surf-100);
+    outline: 1px solid #0a0a0a;
+    filter: drop-shadow(0px 0px 5px #0202027d);
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.searchForm:hover {
+    outline: 1px solid var(--color-turquoise-surf-950);
+}
+
+.searchForm::placeholder {
+        color: var(--color-turquoise-surf-100)
+}
+
+.searchForm:focus {
+    outline: 1px solid var(--color-turquoise-surf-500);
+    background-color: #0f0f0f;
+    border-radius: 9px;
+    border: none;
+}
+
