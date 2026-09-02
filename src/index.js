@@ -58,11 +58,6 @@ app.get("/", async (request, reply) => {
     return reply.sendFile("index.html");
 });
 
-app.setNotFoundHandler((request, reply) => {
-    console.log("FASTIFY 404:", request.method, request.url);
-    reply.code(404).send("Not found");
-});
-
 app.server.on("upgrade", (req, socket, head) => {
     if (req.url?.startsWith("/wisp/")) {
         wisp.routeRequest(req, socket, head);
