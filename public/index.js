@@ -68,6 +68,7 @@ async function initScramjet() {
 
 async function navigate(url) {
     await initScramjet();
+    frame = null;
 	iframe = document.querySelector(`iframe[style*="display: block"]`);
     if (!frame) {
         frame = controller.createFrame(iframe);
