@@ -4,6 +4,11 @@ let iframe = null;
 const form = document.getElementById("searchForm");
 const input = document.getElementById("searchInput");
 
+function isValidRegexUrl(string) {
+  const urlPattern = /^(https?:\/\/)?([\w\d\-_]+\.)+[\w\d\-_]{2,}(\/.*)?$/i;
+  return urlPattern.test(string.trim());
+}
+
 async function registerSW() {
     if (!("serviceWorker" in navigator)) {
         throw new Error("Service workers are not supported.");
@@ -70,6 +75,21 @@ async function navigate(url) {
     await initScramjet();
     frame = null;
 	iframe = document.querySelector(`iframe[style*="display: block"]`);
+    let urlTest = isValidRegexUrl(url)
+    if (urlTest == true) {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://" + url;
+        }
+    } else
+        {
+            if (localStorage.getItem("searchEngine") == null) {
+                localStorage.setItem("searchEngine", "https://duckduckgo.com/?q=")
+                url = localStorage.getItem("searchEngine") + encodeURIComponent(url);
+            } else {
+                url = localStorage.getItem("searchEngine") + encodeURIComponent(url);
+            }
+                
+        }
     if (!frame) {
         frame = controller.createFrame(iframe);
     }
