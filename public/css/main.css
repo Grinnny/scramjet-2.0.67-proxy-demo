@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Doppio; /* set name */
+  src: url(DoppioOne-Regular.ttf); /* url of the font */
+}
+
+
 :root {
 --color-turquoise-surf-50: #eaf7fb;
 --color-turquoise-surf-100: #d4f0f7;
@@ -10,6 +16,7 @@
 --color-turquoise-surf-800: #104856;
 --color-turquoise-surf-900: #08242b;
 --color-turquoise-surf-950: #06191e;
+font-family: Doppio;
 
 }
 

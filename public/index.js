@@ -94,6 +94,14 @@ async function navigate(url) {
         frame = controller.createFrame(iframe);
     }
     frame.go(url);
+    setTimeout(() => {
+            let tabClass = iframe.classList[1]
+            let tabParent = document.querySelector('div.' + tabClass)
+            let childButton = tabParent.children[0]
+            let iframedoc = iframe.contentWindow.document
+            let title = iframedoc.title.slice(0, 10)
+            childButton.innerHTML = title
+    }, 1500);
 }
 
 
